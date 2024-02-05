@@ -1,0 +1,288 @@
+html {
+  height: 100%;
+}
+body {
+  font-family: sans-serif;
+  background: #ededec;
+}
+.container {
+  width: 320px;
+  font-size:16px;
+  margin: 0 auto;
+}
+.small {
+  font-size: 0.8em;
+  letter-spacing: -0.7px;
+  text-align: center;
+  color: #999;
+}
+.topImg {
+  width: 70%;
+  max-width: 70%;
+  
+}
+.terms {
+  font-size: 0.9em;
+  letter-spacing: -0.7px;
+  text-align: center;
+  color: white;
+  margin-top: 50px;
+}
+.terms ul {
+  list-style: circle inside;
+  padding: 0;
+  margin: 0;
+}
+.terms .small {
+  font-size: 12px !important;
+  letter-spacing: -0.7px;
+  text-align: center;
+  color: black;
+}
+
+.formHolder {
+  background: transparent;
+  padding: 0;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#eeeeee',GradientType=0 );
+  text-align: center;
+  padding: 15px;
+  color: #333;
+  border-radius: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.right {
+  
+  width: 90%;
+  font-size: 1em;
+  line-height: 12px;
+  border: 1px solid grey;
+  
+  
+}
+.formHolder input {
+
+  padding: 15px 20px 10px 40px
+}
+.button {
+  background: #4267b2;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8b8b8b', endColorstr='#8b8b8b',GradientType=0 );
+  color: rgb(255, 255, 255);
+  width: 100%;
+  padding: 15px 0;
+  margin: 30px 0 0;
+  border: none;
+  font-size: 1.2em;
+  border-radius: 7px;
+}
+.invisible {
+  visibility: visible !important;
+  display: none !important;
+}
+
+.pin, .loadingCard, .pinText, .somethingWrong, .hidden, .unsubscribe, .inValidPhone, .inValidPin, .block, .MoMessage, .redirectCard, .accessDenied {
+display: none;
+font-weight: bold;
+}
+
+.validationCorrect input#mobile {
+border: green 2px solid;
+  color: green;
+}
+
+#mobile {
+  font-weight: 700;
+}
+
+.validationError input#mobile {
+  border: crimson 2px solid;
+  color: red;
+}
+
+[data-operator="vodafone"] {
+  margin-top: 15px;
+}
+
+.imgDiv img {
+  width: 100%;
+  height: auto;
+}
+
+/* Fullwidth Body Layout */
+body.fullwidth .container{
+  width: 100%;
+  padding: 0px;
+}
+body.fullwidth .imageContainer{
+  text-align: center;
+}
+body.fullwidth .formHolder{
+  border-radius: 0;
+}
+body.fullwidth .terms, body.fullwidth form, body.fullwidth .loadingCard, body.fullwidth img.topImg{
+  width: 320px;
+  margin: 0 auto;
+}
+body.fullwidth.prelander {
+  width: 300px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+/* Blue Body Layout */
+body.blue{
+  background-color: #019ee9;
+}
+body.blue .formHolder{
+  background: #224687;
+  color: white;
+}
+body.blue input{
+  color: #333;
+}
+body.blue .small, body.blue .loadingCard, body.blue .invalidPin{
+  color: white;
+}
+body.blue .button{
+  background: rgb(245,214,58);
+  background: -moz-linear-gradient(top, rgba(245,214,58,1) 0%, rgba(247,175,59,1) 50%, rgba(245,214,58,1) 100%);
+  background: -webkit-linear-gradient(top, rgba(245,214,58,1) 0%,rgba(247,175,59,1) 50%,rgba(245,214,58,1) 100%);
+  background: linear-gradient(to bottom, rgba(245,214,58,1) 0%,rgba(247,175,59,1) 50%,rgba(245,214,58,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5d63a', endColorstr='#f5d63a',GradientType=0 );
+}
+/* Progress Bar CSS */
+@-webkit-keyframes progress-bar-stripes {
+  from  { background-position: 40px 0; }
+  to    { background-position: 0 0; }
+}
+      
+@keyframes progress-bar-stripes {
+  from  { background-position: 40px 0; }
+  to    { background-position: 0 0; }
+}
+.progress {
+  height: 20px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+}
+.progress-bar-striped, .progress-striped .progress-bar {
+  background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+  background-image: -o-linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+  background-image: linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+  -webkit-background-size: 40px 40px;
+  background-size: 40px 40px;
+}
+.progress-bar {
+  float: left;
+  width: 0;
+  height: 100%;
+  font-size: 12px;
+  line-height: 20px;
+  color: #fff;
+  text-align: center;
+  background-color: #337ab7;
+  -webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+  -webkit-transition: width .6s ease;
+  -o-transition: width .6s ease;
+  transition: width .6s ease;
+}
+.progress-bar.active, .progress.active .progress-bar {
+  -webkit-animation: progress-bar-stripes 2s linear infinite;
+  -o-animation: progress-bar-stripes 2s linear infinite;
+  animation: progress-bar-stripes 2s linear infinite;
+}
+.bg-success {
+  background-color: #28a745 !important;
+}
+
+.imgDiv {
+width: 45%;
+display: inline-block;
+}
+
+.imgDiv a {
+display: inline-block;
+}
+
+.imgDiv a img {
+width: 100%;
+}
+
+body.prelander .terms{
+  display: none;
+}
+.small{
+  color: #fff;
+}
+.top-text{
+  color: #000000;
+}
+.formHolder{
+  background: transparent;
+  padding: 0;
+}
+.imageContainer{
+  text-align: center;
+}
+.topImg{
+  width: 100%;
+}
+#msisdn_form{
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+}
+input{
+  color: #333;
+  border-radius: 0px;
+}
+.input-icons i { 
+  position: absolute;
+  margin-top: -5px; 
+}
+.input-icons { 
+  width: 100%; 
+  margin-bottom: 0px; 
+  
+} 
+.icon { 
+  padding: 10px; 
+  min-width: 0px; 
+} 
+input.disabled {
+  background-color: rgb(224, 216, 216);
+}
+.jumboBg{
+  background-repeat: no-repeat;
+}
+.thankyou{
+  color: #000000;
+  padding: 4%;
+  font-weight: bold;
+  font-size: 110%;
+}
+.error{
+  color: red;
+  padding: 4%;
+}
+.block {
+  font-weight: bold;
+  font-size: 110%;
+  color: red;
+  padding: 4%;
+}
+.inner-container {
+  background: #fff;
+  padding: 5%;
+  border-radius: 0px;
+  border: 0.1px solid rgb(211, 211, 211);
+
+}
+.resendPin {
+  margin-top: 15px;
+  text-decoration: underline;
+  font-size: x-small;
+}

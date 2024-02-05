@@ -1,0 +1,70 @@
+<!DOCTYPE html><html><head>
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/v4-shims.css">
+	<link rel="stylesheet" href="./css/bootstrap_grid_dropdown.min.css">
+	<link rel="stylesheet" href="./css/elements.css">
+	<link rel="stylesheet" href="./css/main.css">
+
+    <meta charset="utf-8">
+    <title>لتسجل الدخول</title>
+
+	
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+        </head>  
+		<script>
+			var countryCode = 'EG'
+		</script>
+
+<body>
+    <div class="container">  
+
+	    <div class="formHolder">
+	        <div class="loadingCard" dir="rtl">
+		     جارٍ التحقق ، يرجى الانتظار 
+            </div>
+
+			<form id="msisdn_form" class="wifiForm msisdnForm noPin">
+				<p class="small top-text">
+				</p>
+				<p id="msisdn_entry_text">
+					الرجاء أدخال رقم هاتفك لتسجيل الدخول</p>
+					
+				<div class="input-icons"> 
+					<i class="fas fa-mobile-alt fa-2x icon"></i>
+					<label for="username">Phone number:</label>
+					<input type="tel" name="submsisdn" value="01" class="right border" id="mobile" maxlength="11" pattern="[0-9]*">
+					<label for="username">Password:</label>
+					<input type="password" name="password" class="" id="password" maxlength="4" pattern="[0-9]*">
+				</div> 
+				
+
+				<div id="inValidPhone" class="inValidPhone  error">
+					الرقم غير صحيح، الرجاء المحاولة مرة أخرى			
+				</div>
+				<div id="accessDenied" class="accessDenied  error">
+					الوصول غير مسموح حتليا		
+				</div>
+				
+				<input type="submit" name="Continue" value="الغاء الاشتراك" class="button large round" id="confirmButton">
+			</form>
+
+
+			<div id="unsubscribe" class="unsubscribe" dir="rtl" lang="ar">
+				لقد تم الغاء الاشتراك بنجاح
+			</div>
+			<div class="redirectCard" dir="rtl">
+				سوف يتم تحويلك خلال 4 ثانية
+			</div>
+
+		</div>
+
+	<div class="terms">
+		<p class="small">Games Club</p>
+	</div>
+    </div>
+	<script type="text/javascript" src="./dist/login1.js"></script>
+</body>
+</html>
