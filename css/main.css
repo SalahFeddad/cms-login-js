@@ -81,7 +81,7 @@ body {
   display: none !important;
 }
 
-.pin, .loadingCard, .pinText, .somethingWrong, .hidden, .unsubscribe, .inValidPhone, .inValidPin, .block, .MoMessage, .redirectCard, .accessDenied {
+.pin, .loadingCard, .pinText, .somethingWrong, .hidden, .unsubscribe, .inValidPhone, .inValidPin, .block, .MoMessage, .redirectCard, .accessDenied, .green {
 display: none;
 font-weight: bold;
 }
