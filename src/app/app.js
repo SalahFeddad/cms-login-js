@@ -14,6 +14,7 @@ export function main () {
   const password = document.getElementById('password')
   
   const inValidPhone = document.getElementById('inValidPhone')
+  const successfulAccess = document.getElementById('successfulAccess')
   const invalidPhoneOrPassword = document.getElementById('invalidPhoneOrPassword')
   const inActiveUser = document.getElementById('inActiveUser')
   const forgotPassword = document.getElementById('forgot_password')
@@ -59,8 +60,9 @@ export function main () {
       success: function (res) {
         unloading()
         $(mobileForm).slideUp() // hide mobile form
+        $(successfulAccess).slideDown() // hide mobile form
         if (res.data.serviceURL) {
-          window.location.replace(res.data.serviceURL)
+          redirectToIn(res.data.serviceURL)
         } else {console.log('no service URL!!');$(accessDenied).slideDown()}
       },
       error: function (res) {
