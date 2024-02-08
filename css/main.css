@@ -11,10 +11,11 @@ body {
   margin: 0 auto;
 }
 .small {
-  font-size: 0.8em;
+  font-size: 0.85em;
   letter-spacing: -0.7px;
   text-align: center;
   color: #999;
+  font-weight: bold;
 }
 .topImg {
   width: 70%;
@@ -68,7 +69,7 @@ body {
   background: #4267b2;
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8b8b8b', endColorstr='#8b8b8b',GradientType=0 );
   color: rgb(255, 255, 255);
-  width: 100%;
+  width: 200px;
   padding: 15px 0;
   margin: 30px 0 0;
   border: none;
@@ -92,6 +93,7 @@ border: green 2px solid;
 
 #mobile {
   font-weight: 700;
+  
 }
 
 .validationError input#mobile {
@@ -285,4 +287,11 @@ input.disabled {
   margin-top: 15px;
   text-decoration: underline;
   font-size: x-small;
+}
+.botom-terms {
+  margin-top: 15px;
+  text-decoration: underline;
+  font-size: 13px;
+  color: #2f00ff;
+  cursor: pointer; 
 }

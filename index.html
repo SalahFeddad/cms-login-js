@@ -15,56 +15,111 @@
     <meta name="format-detection" content="telephone=no">
         </head>  
 		<script>
-			var countryCode = 'EG'
+			var countryCode = 'SA'
+			var language = 'ar'
+			// phone: 46955156
+			// password: 0789
 		</script>
 
 <body>
     <div class="container">  
-
+		<div style="margin-left: 10px;margin-top: 10px;">
+			<button id="translation_button" value="ar"><span class="ar">English</span><span class="en hidden">عربية</span></button>
+		</div>
 	    <div class="formHolder">
-	        <div class="loadingCard" dir="rtl">
-		     جارٍ التحقق ، يرجى الانتظار 
-            </div>
+			<div class="loadingCard" dir="rtl">
+				<span class="ar">
+					جارٍ التحقق ، يرجى الانتظار 
+				</span>
+				<span class="en hidden">
+					Processing please wait
+				</span>
+			</div>
 
 			<form id="msisdn_form" class="wifiForm msisdnForm noPin">
-				<p class="small top-text">
-				</p>
 				<p id="msisdn_entry_text">
-					الرجاء أدخال رقم هاتفك لتسجيل الدخول</p>
+					<span class="ar">
+						الرجاء أدخال رقم هاتفك و الرقم السري لتسجيل الدخول 
+					</span>
+					<span class="en hidden">
+						Please enter your phone number and password to login
+					</span>
+				</p>
 					
-				<div class="input-icons"> 
-					<i class="fas fa-mobile-alt fa-2x icon"></i>
-					<label for="username">Phone number:</label>
-					<input type="tel" name="submsisdn" value="01" class="right border" id="mobile" maxlength="11" pattern="[0-9]*">
-					<label for="username">Password:</label>
-					<input type="password" name="password" class="" id="password" maxlength="4" pattern="[0-9]*">
+				<div class="align-text"> 
+					<!-- <i class="fas fa-mobile-alt fa-2x icon"></i> -->
+					<label for="username" class="align-text">
+						<span class="ar">‫رقم هاتفك:‬</span><span class="en hidden">Phone number:</span>
+					</label>
+					<div></div>
+					<input type="tel" name="submsisdn" value="05" class="right border" id="mobile" maxlength="11" pattern="[0-9]*">
+					<label for="password" class="align-text">
+						<span class="ar">‫الرقم السري:‬</span><span class="en hidden">Password:</span>
+					</label>
+					<input type="password" name="password" class="right border" id="password" maxlength="4" pattern="[0-9]*">
 				</div> 
 				
 
 				<div id="inValidPhone" class="inValidPhone  error">
-					الرقم غير صحيح، الرجاء المحاولة مرة أخرى			
+					<span class="ar">الرقم غير صحيح، الرجاء المحاولة مرة أخرى</span><span class="en hidden">The number is invalid, please try again</span>				
 				</div>
+				<div id="invalidPhoneOrPassword" class="inValidPhone  error">
+					<span class="ar">رقم الهاتف او الرقم السري خاطئ</span><span class="en hidden">The phone number or the passward is wrong</span>				
+				</div>
+
 				<div id="accessDenied" class="accessDenied  error">
-					الوصول غير مسموح حتليا		
+					<span class="ar">الوصول غير مسموح حاليا</span><span class="en hidden">AccessDenied</span>		
+							
 				</div>
 				
-				<input type="submit" name="Continue" value="الغاء الاشتراك" class="button large round" id="confirmButton">
+				<button type="submit" name="Continue" class="button large round" id="confirmButton">
+					<span class="ar">تسجيل الدخول</span><span class="en hidden">Login</span>
+				</button> 
 			</form>
-
-
-			<div id="unsubscribe" class="unsubscribe" dir="rtl" lang="ar">
-				لقد تم الغاء الاشتراك بنجاح
+			<div id="inActiveUser" class="inValidPhone  error">
+				<span class="ar">الاشتراك غير مفعل الرجاء تحديث الاشتراك</span><span class="en hidden">The subscription is in active kindly resubscribe again</span>
+				
 			</div>
 			<div class="redirectCard" dir="rtl">
-				سوف يتم تحويلك خلال 4 ثانية
+				<span class="ar">سوف يتم تحويلك خلال 4 ثانية</span><span class="en hidden">You will be redirected in 4 seconds</span>
 			</div>
 
 		</div>
 
 	<div class="terms">
-		<p class="small">Games Club</p>
+		<p class="botom-terms" id="forgot_password"><span class="ar">نسيت كلمه المرور</span><span class="en hidden">Forgot password</span></p>
+		<p class="small">Mobile Games Club</p>
 	</div>
     </div>
 	<script type="text/javascript" src="./dist/login1.js"></script>
+	<script>
+		  async function changeLanguage(from){
+		const to = from === 'ar'? 'en': 'ar'
+		language = to
+		translationButton.value = to
+		const toBeHid = document.getElementsByClassName(from)
+		const alignText = document.getElementsByClassName('align-text')
+		for(let key in toBeHid){
+			if(toBeHid.hasOwnProperty(key)){
+				toBeHid[key].classList.add('hidden')
+			}
+		}
+		for(let key in alignText){
+		if(alignText.hasOwnProperty(key)){
+			console.log('align text to: ', to)
+			to === 'ar' ? alignText[key].style.textAlign = 'right' : alignText[key].style.textAlign = 'left'
+			}
+    	}
+		const toBeDisplayed = document.getElementsByClassName(to)
+		for (let key in toBeDisplayed) {
+			if(toBeDisplayed.hasOwnProperty(key)){
+				toBeDisplayed[key].classList.remove('hidden')
+			}
+		}
+	}
+	const translationButton = document.getElementById('translation_button')
+	translationButton.addEventListener('click', ()=>{changeLanguage(translationButton.value)})
+
+	</script>
 </body>
 </html>
