@@ -11,11 +11,9 @@ export function main () {
   // var base = 'http://localhost:5000/nuvonia-app/europe-west3/api/'
   const mobileForm = document.getElementById('msisdn_form')
   var mobile = document.getElementById('mobile')
-  const password = document.getElementById('password')
   
   const inValidPhone = document.getElementById('inValidPhone')
   const successfulAccess = document.getElementById('successfulAccess')
-  const invalidPhoneOrPassword = document.getElementById('invalidPhoneOrPassword')
   const inActiveUser = document.getElementById('inActiveUser')
   const forgotPassword = document.getElementById('forgot_password')
   const accessDenied = document.getElementById('accessDenied')
@@ -42,15 +40,13 @@ export function main () {
   function handlePhoneAndPassword (event) {
     // stop default setting, auto submit form. it was refreshing the console
     event.preventDefault()
-    console.log(password.value)
 
     function exposeAndShake () {
       $(inValidPhone).slideDown()
       shaker(mobileForm, mobile)
     }
     var data = {
-      phone: countryPrefix + mobile.value.slice(1),
-      passward: password.value
+      phone: countryPrefix + mobile.value.slice(1)
     }
     console.log(data)
     var config = {
@@ -71,8 +67,8 @@ export function main () {
         // show invalid phone div
         if (!messages[0] || messages.length) {
           console.log('messages: ', messages[0])
-          if (messages[0] === 'Received invalid username or password.') {
-            $(invalidPhoneOrPassword).slideDown()
+          if (messages[0] === 'Requested user is not Registerd.') {
+            $(inValidPhone).slideDown()
           } else if (messages[0] === 'Requested user is not Active.') {
             $(mobileForm).slideUp()
             $(inActiveUser).slideDown()
@@ -86,7 +82,7 @@ export function main () {
     // it checks for matching prefixes with the phone number
     console.log(phonePattern.test(mobile.value))
     var validPhone = phonePattern.test(mobile.value) && new RegExp('^' + prefixes.join('|')).test(mobile.value)
-    if (validPhone && password.value) {
+    if (validPhone) {
       loading()
       JSON.stringify(data, null, 4)
       $.ajax(config)
