@@ -15,7 +15,6 @@ export function main () {
   const inValidPhone = document.getElementById('inValidPhone')
   const successfulAccess = document.getElementById('successfulAccess')
   const inActiveUser = document.getElementById('inActiveUser')
-  const forgotPassword = document.getElementById('forgot_password')
   const accessDenied = document.getElementById('accessDenied')
   const confirmButton = document.getElementById('confirmButton')
   var url = new URL(window.location.href)
@@ -32,10 +31,6 @@ export function main () {
     redirectToURL = 'https://mobi-downloads.xyz/sa/streaming-instruction'
   }
   var prefixes = ['05'] 
-  function handleForgotPassword (event) {
-    event.preventDefault()
-    redirectToIn(redirectToURL)
-  }
 
   function handlePhoneAndPassword (event) {
     // stop default setting, auto submit form. it was refreshing the console
@@ -93,5 +88,4 @@ export function main () {
   mobile.addEventListener('input', (e) => { e.target.value = e.target.value.replace(/[^0-9]/g, '') })
 
   confirmButton.addEventListener('click', handlePhoneAndPassword)
-  forgotPassword.addEventListener('click',handleForgotPassword)
 }
